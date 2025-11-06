@@ -1,0 +1,53 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Aurora-style gradient -->
+    <radialGradient id="auroraGlass" cx="30%" cy="30%" r="100%">
+      <stop offset="0%" stop-color="#38bdf8" />   <!-- cyan -->
+      <stop offset="40%" stop-color="#8b5cf6" />  <!-- violet -->
+      <stop offset="100%" stop-color="#3b82f6" /> <!-- blue -->
+    </radialGradient>
+
+    <!-- Soft blur background -->
+    <filter id="glassBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feColorMatrix
+        in="blur"
+        type="matrix"
+        values="0 0 0 0 0.2
+                0 0 0 0 0.25
+                0 0 0 0 0.3
+                0 0 0 0.3 0"
+      />
+      <feBlend in="SourceGraphic" in2="blur" mode="overlay" />
+    </filter>
+  </defs>
+
+  <!-- Glass circle -->
+  <circle
+    cx="60"
+    cy="60"
+    r="55"
+    fill="rgba(255, 255, 255, 0.08)"
+    stroke="url(#auroraGlass)"
+    stroke-width="3"
+    filter="url(#glassBlur)"
+  />
+
+  <!-- Inner subtle reflection -->
+  <ellipse cx="60" cy="45" rx="35" ry="15" fill="white" opacity="0.08"/>
+
+  <!-- Text -->
+  <text
+    x="50%"
+    y="50%"
+    fill="url(#auroraGlass)"
+    font-family="Jersey 10, sans-serif"
+    font-size="44"
+    font-weight="600"
+    text-anchor="middle"
+    dy=".35em"
+    style="paint-order: stroke; stroke: rgba(255,255,255,0.25); stroke-width: 1;"
+  >
+    KR
+  </text>
+</svg>
