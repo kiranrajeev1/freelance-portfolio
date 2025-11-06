@@ -4,12 +4,8 @@ import ProjectCard from "@/components/ProjectCard";
 
 const projects = [
   {
-    title: "Flashcard Quest – MERN Stack Learning Application",
-    description: `Architected a full-stack web application featuring secure user authentication and interactive flashcard study tools.
-• Implemented secure user registration and login functionality using JSON Web Tokens (JWT) for authentication.
-• Built a RESTful API with Node.js and Express.js to handle CRUD operations for flashcard decks and user data.
-• Designed a responsive and interactive frontend with React.js, allowing users to create, manage, and study with flashcards and quizzes.
-• Utilized MongoDB and Mongoose for database schema design and to persist user and application data.`,
+    title: "Flashcard Quest – MERN App",
+    description: `Developed a full-stack web app with secure JWT-based authentication and interactive flashcard tools using the MERN stack. Built RESTful APIs for CRUD operations and designed a responsive React frontend with MongoDB for data persistence.`,
     imageSrc: "https://picsum.photos/seed/flashcard/600/400",
     skills: ["MongoDB", "Express", "React", "Node.js", "TailwindCSS", "JWT"],
     demo: "https://flashcardquest.vercel.app/", // Replace with actual demo URL

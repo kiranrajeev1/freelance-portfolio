@@ -22,11 +22,10 @@ const ProjectCard = ({ project, index }) => {
     <motion.div
       ref={ref}
       style={{ scale, opacity }}
-      // ✅ p-6 REMOVED from here, sm:h-[20rem] kept for desktop
-      className={`group relative bg-gray-100 dark:bg-white/10 border border-black/5 dark:border-white/20 rounded-lg overflow-hidden sm:h-[20rem] sm:max-w-[42rem] mx-auto mb-6 hover:bg-gray-200 transition-all duration-300 ease-out`}
+      // ✅ FIX: Increased height from 20rem to 22rem
+      className={`group relative bg-gray-100 dark:bg-white/10 border border-black/5 dark:border-white/20 rounded-lg overflow-hidden sm:h-[22rem] sm:max-w-[42rem] mx-auto mb-6 hover:bg-gray-200 transition-all duration-300 ease-out`}
     >
       {/* === NEW Mobile Image === */}
-      {/* This image is visible on mobile (block) and hidden on desktop (sm:hidden) */}
       <img
         src={imageSrc}
         alt={`Project ${title}`}
@@ -35,7 +34,6 @@ const ProjectCard = ({ project, index }) => {
 
       {/* Text Section */}
       <div
-        // ✅ p-6 ADDED here to pad the text content
         className={`flex flex-col h-full p-6 sm:max-w-[50%] ${
           isEven ? "sm:ml-[21rem]" : "sm:mr-[21rem]"
         }`}
@@ -81,8 +79,6 @@ const ProjectCard = ({ project, index }) => {
       </div>
 
       {/* Image Section (Desktop) */}
-      {/* This is your original image tag. It is UNCHANGED. */}
-      {/* It is correctly set to 'hidden' on mobile and 'sm:block' on desktop */}
       <img
         src={imageSrc}
         alt={`Project ${title}`}
@@ -100,4 +96,4 @@ const ProjectCard = ({ project, index }) => {
   );
 };
 
-export default ProjectCard; 
+export default ProjectCard;
