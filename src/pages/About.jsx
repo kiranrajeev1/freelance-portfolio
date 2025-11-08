@@ -81,7 +81,7 @@ const About = () => {
   };
 
   return (
-    <div className="py-24 px-4 w-full max-w-7xl mx-auto relative">
+    <div className="py-16 px-4 sm:px-6 w-full max-w-7xl mx-auto relative">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -89,21 +89,10 @@ const About = () => {
         transition={{ duration: 0.6 }}
         className="relative z-10"
       >
-        {/* Header Section */}
-        <div className="text-center mb-16 relative">
-          <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 mb-6"
-          >
-            <Sparkles size={16} className="text-blue-500" />
-            <span className="text-sm font-medium">Services & Expertise</span>
-          </motion.div>
-
-          {/* Title with animated underline */}
+        {/* Header */}
+        <div className="text-center mb-10 sm:mb-12 relative">
           <motion.h2
-            className="relative text-5xl md:text-6xl font-black mb-10 inline-block"
+            className="relative text-3xl sm:text-4xl md:text-5xl font-black mb-6 sm:mb-8 inline-block"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -111,10 +100,8 @@ const About = () => {
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-200 dark:to-purple-200">
               What I Offer
             </span>
-
-            {/* Animated gradient underline */}
             <motion.div
-              className="absolute -bottom-3 left-0 right-0 h-[4px] bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 rounded-full"
+              className="absolute -bottom-3 left-0 right-0 h-[3px] sm:h-[4px] bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 rounded-full"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: false }}
@@ -123,20 +110,20 @@ const About = () => {
             />
           </motion.h2>
 
-          <p className="text-lg text-black/70 dark:text-white/70 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base text-black/70 dark:text-white/70 leading-relaxed max-w-3xl mx-auto">
             Transforming ideas into powerful digital experiences — from concept to
             deployment. I deliver high-performance web apps built with cutting-edge
             technologies and cloud infrastructure.
           </p>
         </div>
 
-        {/* Cards Grid */}
+        {/* Cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3"
         >
           {offerings.map((item, index) => (
             <motion.div
@@ -150,14 +137,14 @@ const About = () => {
               className="group relative cursor-pointer"
             >
               <motion.div
-                className="relative h-full p-6 rounded-2xl bg-white/50 dark:bg-black/30 backdrop-blur-xl border border-black/5 dark:border-white/10 overflow-hidden"
+                className="relative h-full p-4 sm:p-5 rounded-2xl bg-white/50 dark:bg-black/30 backdrop-blur-xl border border-black/5 dark:border-white/10 overflow-hidden"
                 whileHover={{
                   scale: 1.03,
                   boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
                 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                {/* Gradient border effect */}
+                {/* Gradient border */}
                 <motion.div
                   className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100`}
                   initial={false}
@@ -180,27 +167,27 @@ const About = () => {
 
                 <div className="relative z-10">
                   <motion.div
-                    className={`w-16 h-16 mb-4 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center text-white shadow-lg`}
+                    className={`w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-3 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center text-white shadow-lg`}
                     whileHover={{ rotate: [0, -10, 10, -10, 0] }}
                     transition={{ duration: 0.5 }}
                   >
                     {item.icon}
                   </motion.div>
 
-                  <h3 className="text-xl font-bold mb-2 group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 dark:group-hover:from-blue-400 dark:group-hover:to-purple-400 transition-all duration-300">
+                  <h3 className="text-base sm:text-lg font-bold mb-1 sm:mb-2 group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 dark:group-hover:from-blue-400 dark:group-hover:to-purple-400 transition-all duration-300">
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-black/60 dark:text-white/60 mb-4">
+                  <p className="text-xs sm:text-sm text-black/60 dark:text-white/60 mb-2 sm:mb-4">
                     {item.shortDesc}
                   </p>
 
-                  {/* Tech Badges */}
-                  <div className="flex flex-wrap gap-2 mb-3">
+                  {/* Tech badges */}
+                  <div className="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">
                     {item.tech.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 text-xs rounded-full bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300 border border-blue-500/20"
+                        className="px-2 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-xs rounded-full bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300 border border-blue-500/20"
                       >
                         {tech}
                       </span>
@@ -208,12 +195,12 @@ const About = () => {
                   </div>
 
                   <motion.button
-                    className="flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 group-hover:gap-3 transition-all"
+                    className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm font-medium text-blue-600 dark:text-blue-400 group-hover:gap-3 transition-all"
                     whileHover={{ x: 5 }}
                   >
                     Learn more
                     <ArrowRight
-                      size={16}
+                      size={14}
                       className="group-hover:translate-x-1 transition-transform"
                     />
                   </motion.button>
@@ -222,12 +209,12 @@ const About = () => {
                     {selectedCard === index && (
                       <motion.div
                         initial={{ opacity: 0, height: 0, marginTop: 0 }}
-                        animate={{ opacity: 1, height: "auto", marginTop: 16 }}
+                        animate={{ opacity: 1, height: "auto", marginTop: 12 }}
                         exit={{ opacity: 0, height: 0, marginTop: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="pt-4 border-t border-black/10 dark:border-white/10"
+                        className="pt-3 border-t border-black/10 dark:border-white/10"
                       >
-                        <p className="text-sm text-black/70 dark:text-white/70 leading-relaxed">
+                        <p className="text-xs sm:text-sm text-black/70 dark:text-white/70 leading-relaxed">
                           {item.description}
                         </p>
                       </motion.div>
@@ -237,30 +224,6 @@ const About = () => {
               </motion.div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="text-center mt-20"
-        >
-          <p className="text-black/70 dark:text-white/70 mb-6 text-lg">
-            Ready to build something impactful?
-          </p>
-          <motion.a
-            href="#contact"
-            whileHover={{
-              scale: 1.07,
-              boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)",
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all"
-          >
-            Let’s Talk
-            <ArrowRight size={18} />
-          </motion.a>
         </motion.div>
       </motion.div>
     </div>

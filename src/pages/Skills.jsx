@@ -65,23 +65,24 @@ const Skills = () => {
       <div className="absolute top-1/4 right-0 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl -z-10 animate-pulse" />
       <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl -z-10 animate-pulse" />
 
-      <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 mb-6">
-          <Code2 size={16} className="text-blue-500" />
-          <span className="text-sm font-medium">Technical Skills</span>
-        </div>
-
-        <h2 className="text-5xl md:text-6xl font-black mb-6 relative inline-block">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-200 dark:to-purple-200">
+      {/* Animated Title Section */}
+      <motion.div className="text-center mb-12">
+        <h2 className="text-5xl md:text-7xl font-black mb-6 relative inline-block">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-200 dark:to-purple-300">
             My Expertise
           </span>
-          <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
+          <motion.div
+            className="absolute -bottom-4 left-1/2 -translate-x-1/2 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
+            initial={{ width: 0 }}
+            whileInView={{ width: 240 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            viewport={{ once: true }}
+          />
         </h2>
-
-        <p className="text-lg text-black/70 dark:text-white/70 leading-relaxed max-w-2xl mx-auto">
-          A visual constellation of the technologies I use to build, deploy, and scale.
+        <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto mt-4">
+          A constellation of modern technologies I use to build, deploy, and scale production-grade applications
         </p>
-      </div>
+      </motion.div>
 
       {/* Skill Categories */}
       <div className="flex flex-col lg:flex-row lg:justify-center gap-12 lg:gap-8">
@@ -109,7 +110,6 @@ const Skills = () => {
                   viewport={{ once: false, amount: 0.5 }}
                   className="relative flex flex-col items-center group w-20"
                 >
-                  {/* Orb */}
                   <div
                     className={`relative w-20 h-20 rounded-full bg-white/40 dark:bg-black/30 backdrop-blur-md border border-black/10 dark:border-white/10 flex items-center justify-center p-4 transition-all duration-300 group-hover:shadow-xl ${category.shadow}`}
                   >
@@ -118,13 +118,10 @@ const Skills = () => {
                       alt={skill.name}
                       className={`w-full h-full object-contain ${skill.invert ? "dark:invert" : ""} transition-transform duration-300 group-hover:scale-110`}
                     />
-                    {/* Glow on hover */}
                     <motion.div
                       className={`absolute inset-0 w-full h-full rounded-full bg-gradient-to-r ${category.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
                     />
                   </div>
-
-                  {/* Skill Name (Always Visible Now) */}
                   <span className="mt-3 text-sm font-medium text-black/80 dark:text-white/80 text-center">
                     {skill.name}
                   </span>
@@ -134,6 +131,19 @@ const Skills = () => {
           </div>
         ))}
       </div>
+
+      {/* Learning Note */}
+      <motion.div
+        className="mt-20 text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <p className="text-slate-500 dark:text-slate-400 text-sm font-medium tracking-widest uppercase">
+          ✨ Constantly learning & exploring new technologies ✨
+        </p>
+      </motion.div>
     </section>
   );
 };
