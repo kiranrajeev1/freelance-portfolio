@@ -93,10 +93,10 @@
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-4xl z-50"
+        className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-2xl z-50"
       >
         <div className="relative">
-          <div className="p-4 rounded-full shadow-lg bg-white/20 text-black border border-black/20 dark:bg-black/20 dark:text-white dark:border-white/20 backdrop-blur-lg">
+          <div className="p-3 rounded-full shadow-lg bg-white/20 text-black border border-black/20 dark:bg-black/20 dark:text-white dark:border-white/20 backdrop-blur-lg">
             <div className="flex justify-between items-center">
               {/* Desktop View */}
               <div className="hidden md:flex items-center gap-2">{navLinks}</div>

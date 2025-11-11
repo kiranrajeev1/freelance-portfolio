@@ -1,6 +1,7 @@
 // Projects.jsx
 import React from "react";
 import ProjectCard from "@/components/ProjectCard";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -42,9 +43,20 @@ const projects = [
 const Projects = () => {
   return (
     <section id="projects" className="py-24 px-4 w-full max-w-6xl mx-auto">
-      <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-b from-black to-gray-700 dark:from-white dark:to-gray-400 py-2">
-        My Projects
-      </h2>
+      <motion.div className="text-center mb-10 sm:mb-12 relative">
+          <h2 className="relative text-3xl sm:text-4xl md:text-5xl font-black mb-6 sm:mb-8 inline-block">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-200 dark:to-purple-200">
+              Projects
+            </span>
+            <motion.div
+              className="absolute -bottom-4 left-1/2 -translate-x-1/2 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
+              initial={{ width: 0 }}
+              whileInView={{ width: 240 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              viewport={{ once: true }}
+            />
+          </h2>
+        </motion.div>
 
       <div className="grid grid-cols-1 gap-1">
         {projects.map((project, index) => (
