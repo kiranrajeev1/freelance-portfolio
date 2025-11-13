@@ -68,7 +68,7 @@ const Hero = () => {
             {/* Name */}
             <motion.h1
               variants={itemVariants}
-              className="text-5xl lg:text-7xl font-black mb-3 relative"
+              className="text-5xl sm:text-4xl lg:text-7xl font-black mb-3 pb-2 relative"
               style={{
                 // gradient text using CSS variables
                 background:
@@ -82,9 +82,9 @@ const Hero = () => {
             </motion.h1>
 
             {/* Typing Effect */}
-            <motion.div variants={itemVariants} className="mb-7 md:mb-4 h-7">
+            <motion.div variants={itemVariants} className="md:mb-4 h-7">
               <p
-                className="text-lg md:text-xl font-light"
+                className="text-sm md:text-xl font-light"
                 style={{ color: "var(--muted-foreground)" }}
               >
                 {typedText}
@@ -106,7 +106,7 @@ const Hero = () => {
             {/* Description */}
             <motion.p
               variants={itemVariants}
-              className="text-sm md:text-lg leading-relaxed mb-6"
+              className="text-sm md:text-lg leading-relaxed mb-4"
               style={{ color: "var(--muted-foreground)" }}
             >
               Crafting robust, scalable web solutions with cutting-edge technologies.
@@ -117,7 +117,7 @@ const Hero = () => {
             {/* Availability Badge */}
             <motion.div
               variants={itemVariants}
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-xl mb-6 border"
+              className="inline-flex items-center text-sm md:text-xl gap-3 px-5 py-2 rounded-full backdrop-blur-xl mb-6 border"
               style={{
                 background: "var(--accent)",
                 borderColor: "var(--sidebar-border)",
@@ -146,7 +146,7 @@ const Hero = () => {
                   }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => (window.location.href = "#projects")}
-                  className="group relative px-4 sm:px-6 py-2 sm:py-3 rounded-full text-white font-semibold overflow-hidden text-sm sm:text-base"
+                  className="group relative px-4 py-1 md:py-3 rounded-full text-white font-semibold overflow-hidden text-xs sm:text-base"
                   style={{
                     background: "linear-gradient(90deg, var(--primary), var(--chart-4))",
                   }}
@@ -180,42 +180,54 @@ const Hero = () => {
 
           {/* Right Column: Service Steps */}
           <motion.div
-            className="flex-shrink-0 w-full md:w-auto md:max-w-sm flex flex-col gap-8" // Increased gap
-            variants={itemVariants}
+  className="flex-shrink-0 w-full md:w-auto md:max-w-sm flex flex-col gap-4 sm:gap-6"
+  variants={itemVariants}
+>
+  <div className="relative flex flex-col gap-4 sm:gap-6">
+    {/* Timeline line */}
+    <div
+      className="absolute left-4 sm:left-5 top-4 sm:top-5 bottom-4 sm:bottom-6 w-0.5"
+      style={{ background: "var(--sidebar-border)" }}
+    />
+
+    {services.map((service, index) => (
+      <motion.div
+        key={index}
+        className="relative flex items-start gap-3 sm:gap-4 z-10"
+        whileHover={{ scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 250 }}
+      >
+        {/* Icon container */}
+        <div
+          className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full backdrop-blur-sm border flex items-center justify-center"
+          style={{
+            borderColor: "var(--border)",
+            background: "var(--popover)",
+          }}
+        >
+          <div style={{ color: `var(${service.colorVar})` }}>{service.icon}</div>
+        </div>
+
+        {/* Text */}
+        <div className="text-left pt-0.5">
+          <h4
+            className="text-sm sm:text-base font-semibold"
+            style={{ color: "var(--foreground)" }}
           >
-            <div className="relative flex flex-col gap-8"> {/* Increased gap */}
-              <div
-                className="absolute left-6 top-6 bottom-6 w-0.5" // Adjusted position
-                style={{ background: "var(--sidebar-border)" }}
-              />
-              {services.map((service, index) => (
-                <motion.div
-                  key={index}
-                  className="relative flex items-start gap-5 z-10" // Increased gap
-                  whileHover={{ scale: 1.03 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <div
-                    className="flex-shrink-0 w-14 h-14 rounded-full backdrop-blur-sm border flex items-center justify-center" // Increased size
-                    style={{
-                      borderColor: "var(--border)",
-                      background: "var(--popover)",
-                    }}
-                  >
-                    <div style={{ color: `var(${service.colorVar})` }}>{service.icon}</div>
-                  </div>
-                  <div className="text-left pt-1">
-                    <h4 className="text-lg" style={{ color: "var(--foreground)", fontWeight: 700 }}> {/* Increased font size */}
-                      {service.title}
-                    </h4>
-                    <p style={{ color: "var(--muted-foreground)" }} className="text-base"> {/* Increased font size */}
-                      {service.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+            {service.title}
+          </h4>
+          <p
+            className="text-xs sm:text-sm"
+            style={{ color: "var(--muted-foreground)" }}
+          >
+            {service.description}
+          </p>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</motion.div>
+
         </motion.div>
       </div>
 
