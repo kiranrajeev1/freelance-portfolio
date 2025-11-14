@@ -177,7 +177,8 @@ const Skills = () => {
           </div>
 
           {/* Skills Grid */}
-          <div className="grid gap-5 grid-cols-[repeat(auto-fit,minmax(120px,1fr))]">
+          <div className="grid gap-3 grid-cols-[repeat(auto-fit,minmax(65px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(120px,1fr))]">
+
             {activeCategory.skills.map((skill, i) => (
               <motion.div
                 key={skill.name}
@@ -187,11 +188,11 @@ const Skills = () => {
                 animate="visible"
                 className="group flex flex-col items-center gap-1 rounded-xl border border-black/10 bg-white/50 dark:border-white/10 dark:bg-black/30 p-2 shadow-xl backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:border-black/20 dark:hover:border-white/20"
               >
-                <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-white/30 dark:bg-black/40">
+                <div className="flex h-10 md:h-20 w-10 md:w-20 items-center justify-center rounded-lg bg-white/30 dark:bg-black/40">
                   <img
                     src={skill.logoUrl}
                     alt={skill.name}
-                    className={`h-17 w-17 object-contain ${skill.invert ? "dark:invert" : ""}`}
+                    className={`h-7 md:h-17 w-7 md:w-17 object-contain ${skill.invert ? "dark:invert" : ""}`}
                   />
                 </div>
                 <span className="text-xs font-medium text-center text-slate-900 dark:text-white">{skill.name}</span>
