@@ -119,18 +119,19 @@ const Skills = () => {
     <section id="skills" className="py-24 px-4 w-full max-w-6xl mx-auto">
       {/* Header */}
       <div className="text-center mb-10 sm:mb-12 relative">
-        <h2 className="relative text-3xl sm:text-4xl md:text-5xl font-black mb-6 sm:mb-8 inline-block">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-200 dark:to-purple-200">
-            My Expertise
-          </span>
-          <motion.div
-            className="absolute -bottom-4 left-1/2 -translate-x-1/2 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
-            initial={{ width: 0 }}
-            whileInView={{ width: 240 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            viewport={{ once: true }}
-          />
-        </h2>
+        <h2 className="relative text-3xl sm:text-4xl md:text-5xl font-black mb-6 sm:mb-8 inline-block text-center md:text-left">
+  <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-200 dark:to-purple-200">
+    My Expertise
+  </span>
+  <motion.div
+    className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
+    initial={{ width: 0 }}
+    whileInView={{ width: "100%" }}
+    transition={{ delay: 0.3, duration: 0.8 }}
+    viewport={{ once: true }}
+  />
+</h2>
+
         <p className="text-lg md:text-xl text-black/70 dark:text-white/70 leading-relaxed max-w-2xl mx-auto mt-4">
           A focused selection of tools and platforms I rely on to ship performant, reliable products from concept to production.
         </p>

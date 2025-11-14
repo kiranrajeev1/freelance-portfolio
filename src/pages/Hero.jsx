@@ -133,10 +133,11 @@ const Hero = () => {
                 variants={itemVariants}
                 className="md:flex md:items-center md:gap-4 flex flex-row gap-4 justify-center md:justify-start"
               >
+                <a  href="#projects">
                 <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group relative px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-semibold text-sm sm:text-base overflow-hidden"
+                  className="group relative px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-semibold text-sm sm:text-base overflow-hidden cursor-pointer"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full" />
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity rounded-full" />
@@ -150,16 +151,18 @@ const Hero = () => {
                     </motion.span>
                   </span>
                 </motion.button>
-
-                <motion.a
-                  href="mailto:kiranrajeev123@gmail.com"
+                </a>
+                
+                <a href="mailto:kiranrajeev2003@gmail.com">
+                <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base flex items-center justify-center gap-2 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-600/10 dark:hover:bg-blue-400/10 transition-all"
+                  className="px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base flex items-center justify-center cursor-pointer gap-2 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-600/10 dark:hover:bg-blue-400/10 transition-all"
                 >
                   <Send size={18} />
                   <span>Hire Me</span>
-                </motion.a>
+                </motion.button>
+                </a>
               </motion.div>
           </div>
 
