@@ -7,7 +7,7 @@ import {
   GitMerge,
   Monitor,
   ArrowRight,
-  Sparkles,
+  FolderKanban,
 } from "lucide-react";
 
 const About = () => {
@@ -60,6 +60,15 @@ const About = () => {
       gradient: "from-indigo-500 via-violet-500 to-purple-500",
       tech: ["MERN", "AWS", "DevOps"],
     },
+    {
+    icon: <FolderKanban size={28} />,
+    title: "Portfolio Development",
+    shortDesc: "Stunning personal websites",
+    description:
+      "I design modern, animated, high-performance portfolios that showcase your skills and personality. From smooth interactions to responsive layouts, I create portfolios that leave a lasting impression.",
+    gradient: "from-pink-500 via-fuchsia-500 to-purple-500",
+    tech: ["React", "TailwindCSS", "Framer Motion"],
+  },
   ];
 
   const containerVariants = {
