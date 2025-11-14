@@ -52,7 +52,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center px-4 py-24 relative overflow-hidden">
+    <div className="min-h-screen w-full flex items-center justify-center px-4  relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <motion.div
           className="flex flex-col md:flex-row items-center justify-between gap-12"
