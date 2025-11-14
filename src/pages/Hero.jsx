@@ -66,20 +66,14 @@ const Hero = () => {
             {/* --- LOGO REMOVED --- */}
 
             {/* Name */}
-            <motion.h1
-              variants={itemVariants}
-              className="text-5xl sm:text-4xl lg:text-7xl font-black mb-3 pb-2 relative"
-              style={{
-                // gradient text using CSS variables
-                background:
-                  "linear-gradient(90deg, var(--primary), var(--chart-4), var(--chart-5))",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-                color: "transparent",
-              }}
-            >
-              Kiran Rajeev
-            </motion.h1>
+            <motion.div variants={itemVariants} className="space-y-4">
+                <h1 className="text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-black leading-tight pb-2">
+                  <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400">
+                    Kiran Rajeev
+                  </span>
+                </h1>
+              </motion.div>
+
 
             {/* Typing Effect */}
             <motion.div variants={itemVariants} className="md:mb-4 h-7">
@@ -136,21 +130,16 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <motion.div
-              variants={itemVariants}
-              className="flex flex-row gap-2 justify-center md:justify-start flex-wrap"
-            >
-              <motion.button
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(0,0,0,0.12)",
-                  }}
+                variants={itemVariants}
+                className="md:flex md:items-center md:gap-4 flex flex-row gap-4 justify-center md:justify-start"
+              >
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => (window.location.href = "#projects")}
-                  className="group relative px-4 py-1 md:py-3 rounded-full text-white font-semibold overflow-hidden text-xs sm:text-base"
-                  style={{
-                    background: "linear-gradient(90deg, var(--primary), var(--chart-4))",
-                  }}
+                  className="group relative px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-semibold text-sm sm:text-base overflow-hidden"
                 >
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity rounded-full" />
                   <span className="relative flex items-center justify-center gap-2">
                     View My Work
                     <motion.span
@@ -160,27 +149,23 @@ const Hero = () => {
                       →
                     </motion.span>
                   </span>
-                </motion.button> 
+                </motion.button>
 
-              <motion.a
-                href="mailto:kiranrajeev123@gmail.com"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 rounded-full font-semibold border flex items-center gap-2 justify-center transition-all"
-                style={{
-                  background: "rgba(255,255,255,0.03)",
-                  borderColor: "var(--sidebar-border)",
-                  color: "var(--foreground)",
-                }}
-              >
-                <Send size={18} /> Hire Me
-              </motion.a>
-            </motion.div>
+                <motion.a
+                  href="mailto:kiranrajeev123@gmail.com"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base flex items-center justify-center gap-2 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-600/10 dark:hover:bg-blue-400/10 transition-all"
+                >
+                  <Send size={18} />
+                  <span>Hire Me</span>
+                </motion.a>
+              </motion.div>
           </div>
 
           {/* Right Column: Service Steps */}
           <motion.div
-  className="flex-shrink-0 w-full md:w-auto md:max-w-sm flex flex-col gap-4 sm:gap-6"
+  className="flex-shrink-0 w-full md:w-auto md:max-w-sm flex flex-col gap-4 sm:gap-6 items-center md:items-start"
   variants={itemVariants}
 >
   <div className="relative flex flex-col gap-4 sm:gap-6">
